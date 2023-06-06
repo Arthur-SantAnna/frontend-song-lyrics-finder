@@ -36,16 +36,16 @@ h1 {
 }
 
 h1 span {
-    color: #f70814;
+    color: /*#f70814*/ #ff3366;
 }
 
 h2 {
     font-size: 1.2rem;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 forms {
-    margin-top: 60px;
+    margin-top: 50px;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -75,7 +75,7 @@ input:focus {
 }
 
 #search-button {
-    background-color: #f40812;
+    background-color: /*#f40812*/ #ff3366;
     color: white;
     font-size: 1rem;
     font-family: "Poppins-SemiBold", sans-serif;
@@ -84,7 +84,7 @@ input:focus {
 
 a {
     text-decoration: none;
-    color: red;
+    color: /*red*/ #ff3366;
 }
 
 #track-list {
