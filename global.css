@@ -19,10 +19,18 @@
     src: url(./assets/locales/Poppins-Bold.ttf);
 }
 
+:root {
+    --background-color: black;
+    --main: #ff3366;
+    --secondary: #121212;
+    --text: white;
+    --text-secondary: darkgrey;
+}
+
 body {
     font-family: "Poppins-Regular", sans-serif;
-    background-color: black;
-    color: white;
+    background-color: var(--background-color);
+    color: var(--text);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -35,7 +43,7 @@ h1 {
 }
 
 h1 span {
-    color: /*#f70814*/ #ff3366;
+    color: var(--main);
 }
 
 h2 {
@@ -69,8 +77,8 @@ button {
     border: none;
     border-radius: 4px;
     height: 40px;
-    background-color: /*#f40812*/ #ff3366;
-    color: white;
+    background-color: var(--main);
+    color: var(--text);
     font-size: 1rem;
     font-family: "Poppins-SemiBold", sans-serif;
     width: 100px;
@@ -78,5 +86,11 @@ button {
 
 a {
     text-decoration: none;
-    color: /*red*/ #ff3366;
+    color: var(--main);
+}
+
+.arrow-icon{
+    width: 35px;
+    align-self: flex-start;
+    margin-left: 20px;
 }

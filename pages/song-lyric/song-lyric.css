@@ -1,0 +1,51 @@
+#song-description {
+    background-color: var(--secondary);
+    width: 100%;
+    display: flex;
+    position: relative;
+    padding-top: 40px;
+    margin-bottom: 60px;
+}
+
+#track-image {
+    width: 320px;
+    margin-left: 80px;
+    position: relative;
+    bottom: -15px;
+}
+
+#text-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+}
+
+#track-name {
+    font-size: 1.5rem;
+    font-family: "Poppins-SemiBold", sans-serif;
+    margin-top: 15px;
+}
+
+#artist-name {
+    font-size: 1.2rem;
+    font-family: "Poppins-Regular", sans-serif;
+    margin-top: 20px;
+    text-decoration: underline;
+}
+
+#date-wrapper {
+    display: flex;
+    margin-top: 85%;
+    align-items: center;
+}
+
+#date-wrapper img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+#lyrics{
+    padding-left: 134px;
+    padding-right: 600px;
+    line-height: 30px;
+}
