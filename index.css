@@ -1,0 +1,29 @@
+body {
+    position: relative;
+    height: 100vh;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+    gap: 25px;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+button {
+    margin-top: 20px;
+    width: 100%;
+}
+
+p {
+    margin-top: 10px;
+    align-self: center;
+}

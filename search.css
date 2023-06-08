@@ -1,0 +1,59 @@
+form {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#track-list {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(3, 380px);
+    gap: 60px;
+    row-gap: 60px;
+    width: 100%;
+    justify-content: center;
+}
+
+.track {
+    background-color: #121212;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding-bottom: 25px;
+}
+
+.track-image {
+    width: 250px;
+    border-radius: 10px;
+    position: relative;
+    top: -10px;
+}
+
+.track-name {
+    margin-top: 10px;
+}
+
+.artist-name {
+    margin-top: 20px;
+    color: darkgrey;
+}
+
+#track-list a {
+    margin-top: 20px;
+}
+
+#credit {
+    margin-top: 60px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+#credit span {
+    color: #fffe65;
+}
+
+/* TODO:*/
+/* - Tornar site responsivo tanto horizontalmente quando verticalmente */

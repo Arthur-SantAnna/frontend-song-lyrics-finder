@@ -19,7 +19,6 @@
     src: url(./assets/locales/Poppins-Bold.ttf);
 }
 
-/* Styles */
 body {
     font-family: "Poppins-Regular", sans-serif;
     background-color: black;
@@ -44,15 +43,7 @@ h2 {
     margin-top: 30px;
 }
 
-forms {
-    margin-top: 50px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-input,
-#search-button {
+input {
     border: none;
     border-radius: 4px;
     height: 40px;
@@ -74,7 +65,10 @@ input:focus {
     outline: none;
 }
 
-#search-button {
+button {
+    border: none;
+    border-radius: 4px;
+    height: 40px;
     background-color: /*#f40812*/ #ff3366;
     color: white;
     font-size: 1rem;
@@ -85,54 +79,4 @@ input:focus {
 a {
     text-decoration: none;
     color: /*red*/ #ff3366;
-}
-
-#track-list {
-    margin-top: 60px;
-    display: grid;
-    grid-template-columns: repeat(3, 380px);
-    gap: 60px;
-    row-gap: 60px;
-    width: 100%;
-    justify-content: center;
-}
-
-.track {
-    background-color: #121212;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    padding-bottom: 25px;
-}
-
-.track-image {
-    width: 250px;
-    border-radius: 10px;
-    position: relative;
-    top: -10px;
-}
-
-.track-name {
-    margin-top: 10px;
-}
-
-.artist-name {
-    margin-top: 20px;
-    color: darkgrey;
-}
-
-#track-list a {
-    margin-top: 20px;
-}
-
-#credit {
-    margin-top: 60px;
-    margin-bottom: 20px;
-    color: white;
-}
-
-#credit span {
-    color: #fffe65;
 }
