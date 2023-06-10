@@ -17,11 +17,15 @@
     <body>
         <h1><span>Lyrics</span> App</h1>
         <h2>Get the complete lyrics of any given track.</h2>
-        <form action="">
-            <label for="">Name<input type="text" /></label>
-            <label for="">Email<input type="text" /></label>
-            <label for="">Username<input type="text" /></label>
-            <label for="">Password<input type="password" /></label>
+        <form action="" method="post">
+            <label for="name">Name<input type="text" name="name" /></label>
+            <label for="email">Email<input type="email" name="email" /></label>
+            <label for="nickname"
+                >Nickname<input type="text" name="nickname"
+            /></label>
+            <label for="password"
+                >Password<input type="password" name="password"
+            /></label>
             <label for="">Confirm Password<input type="password" /></label>
             <button type="submit">Sign Up</button>
         </form>
