@@ -28,8 +28,7 @@ document.querySelector("form").addEventListener("submit", function (event) {
                 console.log("Form submitted successfully");
 
                 // Redirect to another page
-                window.location.href =
-                    "http://127.0.0.1:5500/pages/search/search.html";
+                window.location.href = `http://127.0.0.1:5500/pages/search/search.html?nickname=${jsonData.nickname}`;
             } else {
                 // Request failed
                 console.error("Form submission failed");

@@ -19,6 +19,11 @@
     src: url(./assets/locales/Poppins-Bold.ttf);
 }
 
+@font-face {
+    font-family: "FlowCircular-Regular";
+    src: url(./assets/locales/FlowCircular-Regular.ttf);
+}
+
 :root {
     --background-color: black;
     --main: #ff3366;
@@ -34,6 +39,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100vh;
 }
 
 h1 {

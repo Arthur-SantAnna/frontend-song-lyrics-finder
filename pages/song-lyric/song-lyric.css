@@ -1,3 +1,11 @@
+body {
+    font-family: FlowCircular-Regular, sans-serif;
+}
+
+a {
+    color: white;
+}
+
 #song-description {
     background-color: var(--secondary);
     width: 100%;
@@ -29,7 +37,7 @@
 
 #favorite-button svg {
     width: 30px;
-    margin-left: 500px;
+    margin-left: 600px;
     margin-top: 22px;
 }
 
@@ -39,13 +47,13 @@
 
 #track-name {
     font-size: 1.5rem;
-    font-family: "Poppins-SemiBold", sans-serif;
+    /* font-family: "Poppins-SemiBold", sans-serif; */
     margin-top: 15px;
 }
 
 #artist-name {
     font-size: 1.2rem;
-    font-family: "Poppins-Regular", sans-serif;
+    /* font-family: "Poppins-Regular", sans-serif; */
     margin-top: 20px;
     text-decoration: underline;
 }
@@ -62,7 +70,12 @@
 }
 
 #lyrics {
-    padding-left: 134px;
-    padding-right: 600px;
     line-height: 30px;
+    margin-bottom: 60px;
+    width: 100%;
+    margin-left: 270px;
+}
+
+#pog {
+    color: black;
 }

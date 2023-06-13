@@ -3,11 +3,22 @@
 const urlParams = new URLSearchParams(window.location.search);
 const nickname = urlParams.get("nickname");
 
-let favoritesElement = document.getElementById("favorites");
-favoritesElement.href = `../favorites/favorites.html?nickname=${nickname}`;
+async function fetchFavoriteSongsId(nickname) {
+    var backendURL = "https://localhost:7140/api/song?nickname=" + nickname;
 
-async function fetchSongLyrics(value) {
-    const url = `https://genius-song-lyrics1.p.rapidapi.com/search/?q=${value}&per_page=10&page=1`;
+    try {
+        const response = await fetch(backendURL);
+        const data = await response.json();
+        console.log("backendData", data);
+        return data;
+    } catch (error) {
+        console.error(error);
+        return error;
+    }
+}
+
+async function fetchFavoriteSongDetails(songApiId) {
+    const url = `https://genius-song-lyrics1.p.rapidapi.com/song/details/?id=${songApiId}`;
     const options = {
         method: "GET",
         headers: {
@@ -19,8 +30,8 @@ async function fetchSongLyrics(value) {
 
     try {
         const response = await fetch(url, options);
-        const result = await response.json(); // Parse the response as JSON
-        console.log(result);
+        const result = await response.json();
+        console.log("geniusData", result);
         return result;
     } catch (error) {
         console.error(error);
@@ -28,32 +39,35 @@ async function fetchSongLyrics(value) {
     }
 }
 
-async function search(value) {
+async function displayFavoriteSongs() {
     try {
-        let result = await fetchSongLyrics(value);
+        let favoriteSongsIdArray = await fetchFavoriteSongsId(nickname);
+        console.log(favoriteSongsIdArray);
 
         let tracksContainer = document.getElementById("track-list");
         tracksContainer.innerHTML = ``; // Clear existing tracks
 
-        for (let i = 0; i < result.hits.length; i++) {
-            let track = result.hits[i].result;
+        for (let i = 0; i < favoriteSongsIdArray.length; i++) {
+            let track = await fetchFavoriteSongDetails(favoriteSongsIdArray[i]);
+
             let trackElement = document.createElement("div");
             trackElement.classList.add("track");
 
             let imageElement = document.createElement("img");
-            imageElement.src = track.header_image_thumbnail_url;
+            imageElement.src = track.song.header_image_thumbnail_url;
             imageElement.alt = "";
 
             let trackNameElement = document.createElement("p");
             trackNameElement.classList.add("track-name");
-            trackNameElement.textContent = track.title;
+            trackNameElement.textContent = track.song.title;
 
             let artistNameElement = document.createElement("p");
             artistNameElement.classList.add("artist-name");
-            artistNameElement.textContent = track.primary_artist.name;
+            console.log("track", track);
+            artistNameElement.textContent = track.song.primary_artist.name;
 
             let lyricsLinkElement = document.createElement("a");
-            lyricsLinkElement.href = `../song-lyric/song-lyric.html?songApiId=${track.id}`;
+            lyricsLinkElement.href = `../song-lyric/song-lyric.html?songApiId=${favoriteSongsIdArray[i]}`;
             lyricsLinkElement.textContent = "Get Lyrics";
 
             trackElement.appendChild(imageElement);
@@ -68,9 +82,4 @@ async function search(value) {
     }
 }
 
-const input = document.querySelector('input[type="text"]');
-const searchButton = document.querySelector('button[id="search-button"]');
-searchButton.addEventListener("click", function (event) {
-    event.preventDefault();
-    search(input.value);
-});
+displayFavoriteSongs();
