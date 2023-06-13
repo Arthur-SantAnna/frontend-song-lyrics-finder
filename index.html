@@ -17,13 +17,18 @@
     <body>
         <h1><span>Lyrics</span> App</h1>
         <h2>Get the complete lyrics of any given track.</h2>
-        <form action="">
-            <label for="">Email/Nickname<input type="text" /></label>
-            <label for="">Password<input type="password" /></label>
+        <form id="login">
+            <label for="nickname"
+                >Nickname<input type="text" name="nickname"
+            /></label>
+            <label for="password"
+                >Password<input type="password" name="password"
+            /></label>
             <button type="submit">Log In</button>
             <p>
                 Not an user? <a href="./pages/sign-up/sign-up.html">Sign Up</a>
             </p>
         </form>
+        <script src="./index.js"></script>
     </body>
 </html>
