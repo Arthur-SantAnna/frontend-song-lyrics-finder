@@ -1,43 +1,16 @@
 #top-page-wrapper {
     display: flex;
+    width: 100%;
     justify-content: space-between;
-    /* width: 100%; */
 }
 
-#greetings {
-    margin-right: 220px;
-    margin-top: 60px;
-    font-size: 18px;
-    font-family: "Poppins-Bold", sans-serif;
-    font-weight: bold;
+#top-page-wrapper img {
+    margin-top: 40px;
+    margin-left: 40px;
 }
 
-#greetings span {
-    color: var(--main);
-}
-
-#center-part {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: -50px;
-}
-
-#input-wrapper {
-    margin-top: 50px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-#favorites-icon {
-    width: 30px;
-    margin-left: 280px;
-    margin-top: 55px;
-}
-
-#favorites-icon:hover {
-    cursor: pointer;
+#top-page-wrapper h1 {
+    margin-left: -120px;
 }
 
 #track-list {
@@ -48,6 +21,8 @@
     row-gap: 60px;
     width: 100%;
     justify-content: center;
+    margin-top: 80px;
+    margin-bottom: 80px;
 }
 
 .track {

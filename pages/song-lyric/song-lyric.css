@@ -20,6 +20,23 @@
     margin-left: 40px;
 }
 
+#favorite-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+#favorite-button svg {
+    width: 30px;
+    margin-left: 500px;
+    margin-top: 22px;
+}
+
+#favorite-button.clicked svg path {
+    fill: #ff3366;
+}
+
 #track-name {
     font-size: 1.5rem;
     font-family: "Poppins-SemiBold", sans-serif;
@@ -44,7 +61,7 @@
     margin-right: 10px;
 }
 
-#lyrics{
+#lyrics {
     padding-left: 134px;
     padding-right: 600px;
     line-height: 30px;

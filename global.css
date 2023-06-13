@@ -84,12 +84,16 @@ button {
     width: 100px;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 a {
     text-decoration: none;
     color: var(--main);
 }
 
-.arrow-icon{
+.arrow-icon {
     width: 35px;
     align-self: flex-start;
     margin-left: 20px;

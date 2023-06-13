@@ -11,34 +11,19 @@
             href="./assets/images/favicon.svg"
         />
         <link rel="stylesheet" href="../../reset.css" />
-        <link rel="stylesheet" href="../.././global.css" />
-        <link rel="stylesheet" href="./search.css" />
-        <link
-            rel="icon"
-            type="image/x-icon"
-            href="../../assets/images/favicon.svg"
-        />
+        <link rel="stylesheet" href="../../global.css" />
+        <link rel="stylesheet" href="./favorites.css" />
     </head>
     <body>
         <div id="top-page-wrapper">
-            <p id="greetings">Olá, <span>danmaluko!</span></p>
-            <div id="center-part">
-                <h1><span>Lyrics</span> App</h1>
-                <h2>Get the complete lyrics of any given track.</h2>
-                <div id="input-wrapper">
-                    <input type="text" placeholder="everything i wanted"
-                    autofocus" /><button id="search-button">Search</button>
-                </div>
-            </div>
-            <div>
-                <a href="../favorites/favorites.html">
-                    <img
-                        src="../../assets/images/heart.svg"
-                        alt=""
-                        id="favorites-icon"
-                    />
-                </a>
-            </div>
+            <a href="../search/search.html"
+                ><img
+                    src="../../assets/images/return-icon.svg"
+                    alt=""
+                    class="arrow-icon"
+            /></a>
+            <h1><span>Favorite</span> Songs</h1>
+            <div id="empty-div"></div>
         </div>
         <div id="track-list">
             <div class="track">
@@ -162,7 +147,5 @@
                 <a href="#">Get Lyrics</a>
             </div>
         </div>
-        <a id="credit" href="#">Powered by <span>Genius</span></a>
-        <script src="./search.js"></script>
     </body>
 </html>
