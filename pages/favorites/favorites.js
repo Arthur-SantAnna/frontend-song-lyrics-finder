@@ -3,6 +3,9 @@
 const urlParams = new URLSearchParams(window.location.search);
 const nickname = urlParams.get("nickname");
 
+let returnElement = document.getElementById("return");
+returnElement.href = `../search/search.html?nickname=${nickname}`;
+
 async function fetchFavoriteSongsId(nickname) {
     var backendURL = "https://localhost:7140/api/song?nickname=" + nickname;
 

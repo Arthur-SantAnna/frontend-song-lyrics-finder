@@ -53,7 +53,7 @@ async function search(value) {
             artistNameElement.textContent = track.primary_artist.name;
 
             let lyricsLinkElement = document.createElement("a");
-            lyricsLinkElement.href = `../song-lyric/song-lyric.html?songApiId=${track.id}`;
+            lyricsLinkElement.href = `../song-lyric/song-lyric.html?songApiId=${track.id}&nickname=${nickname}`;
             lyricsLinkElement.textContent = "Get Lyrics";
 
             trackElement.appendChild(imageElement);

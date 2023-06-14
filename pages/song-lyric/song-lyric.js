@@ -1,12 +1,79 @@
 "use strict";
 
-const button = document.getElementById("favorite-button");
-button.addEventListener("click", function () {
-    button.classList.toggle("clicked");
-});
-
 const urlParams = new URLSearchParams(window.location.search);
 const songApiId = urlParams.get("songApiId");
+const nickname = urlParams.get("nickname");
+
+let jsonData = { songApiId: songApiId, nickname: nickname };
+
+async function getSongs() {
+    try {
+        const response = await fetch(
+            `https://localhost:7140/api/song?nickname=${nickname}`,
+            {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            }
+        );
+
+        if (response.ok) {
+            return response.json();
+        } else {
+            console.error("Failed to get song");
+        }
+    } catch (error) {
+        console.error("Error:", error);
+    }
+}
+
+async function checkLikedSongs() {
+    const likedSongs = await getSongs();
+
+    console.log(likedSongs);
+
+    likedSongs.forEach((likedSong) => {
+        if (likedSong == songApiId) {
+            const button = document.getElementById("favorite-button");
+            button.classList.add("clicked");
+        }
+    });
+}
+
+checkLikedSongs();
+
+window.addEventListener("DOMContentLoaded", () => {
+    checkLikedSongs();
+});
+
+async function likeSong() {
+    fetch("https://localhost:7140/api/song", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(jsonData),
+    })
+        .then(function (response) {
+            if (response.ok) {
+                // Request was successful
+                console.log("Song liked");
+            } else {
+                // Request failed
+                console.error("Failed to like song");
+            }
+        })
+        .catch(function (error) {
+            console.error("Error:", error);
+        });
+}
+
+const button = document.getElementById("favorite-button");
+button.addEventListener("click", function () {
+    button.classList.add("clicked");
+    likeSong();
+});
 
 async function fetchSongLyrics(value) {
     const url = `https://genius-song-lyrics1.p.rapidapi.com/song/lyrics/?id=${value}`;
@@ -22,7 +89,6 @@ async function fetchSongLyrics(value) {
     try {
         const response = await fetch(url, options);
         const result = await response.json(); // Parse the response as JSON
-        // console.log(result);
         return result;
     } catch (error) {
         console.error(error);
