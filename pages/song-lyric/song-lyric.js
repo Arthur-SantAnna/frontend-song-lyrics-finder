@@ -4,6 +4,9 @@ const urlParams = new URLSearchParams(window.location.search);
 const songApiId = urlParams.get("songApiId");
 const nickname = urlParams.get("nickname");
 
+const returnIconElement = document.getElementById("return-icon");
+returnIconElement.href = `../search/search.html?nickname=${nickname}`;
+
 let jsonData = { songApiId: songApiId, nickname: nickname };
 
 async function getSongs() {

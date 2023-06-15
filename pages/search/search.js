@@ -3,6 +3,9 @@
 const urlParams = new URLSearchParams(window.location.search);
 const nickname = urlParams.get("nickname");
 
+const grettingsSpanElement = document.getElementById("greetings-span");
+grettingsSpanElement.textContent = `${nickname}!`;
+
 let favoritesElement = document.getElementById("favorites");
 favoritesElement.href = `../favorites/favorites.html?nickname=${nickname}`;
 
